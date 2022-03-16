@@ -1,0 +1,16 @@
+script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js")
+body.bg-slate-200
+  #container
+    #monitor
+      #monitorscreen
+        div.flex.h-screen
+          div.m-auto
+            form(action="/upload" method="post" enctype="multipart/form-data" runat="server") 
+              .image
+                label(for="image") Select Image File
+                input#imgInp(accept="image/*", type="file" name="file")
+                img#image(src="#", alt="your image" class="imageObj")
+                button(type="submit", value="Submit") Upload
+script(src="/socket.io/socket.io.js") 
+script(src="/script.js") 
+script(src="/imagepreview.js") 
